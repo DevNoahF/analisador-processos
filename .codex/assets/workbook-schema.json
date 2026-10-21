@@ -1,0 +1,22 @@
+{
+  "version": "shr-planilha-2.0",
+  "sheet": "FORÇA TAREFA 2",
+  "header_row": 1,
+  "headers": [
+    "Qntd.", "Status", "Contrato", "Advogado responsável", "UF", "Processo (CNJ)",
+    "Atos já faturados", "Parte adversa", "Data do ato", "Tabela/Edital", "Ato faturável",
+    "Valor/Critério", "Autorização exigida?", "Autorização anexada?", "PDF único conferido?",
+    "PDF nomeado corretamente?", "Documentação exigida", "Procedimento/Categoria",
+    "Observação", "Data da revisão", "ENCERRAR VIOS?", "Observação", "Data da revisão",
+    "Data do Subs", "Data da baixa definitiva", "Atuação SHR comprovada?", "Evidência do ato",
+    "Pendências para faturar", "Chave da tarifa", "Chave de controle da fase",
+    "Fonte da data do Subs", "Data da extinção", "Documentação completa?",
+    "Enquadramento confirmado?", "Obrigações cumpridas?", "Regra sem atuação", "Fase da análise"
+  ],
+  "date_columns": [9, 20, 23, 24, 25, 32],
+  "money_columns": [12],
+  "green_header": "#173D31",
+  "rules_sheet": "REGRAS",
+  "supervision_sheet": "SUPERVISAO",
+  "supervision_headers": ["Job", "Registro", "Chave da fase", "Processo", "Resultado", "Provedor", "Modelo", "Regras", "Fontes", "Pendências"]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Supervisora Banrisul SHR"
+  short_description: "Revê PDFs com Gemini, Claude ou OpenAI e controla as regras"
+  default_prompt: "Use $banrisul-process-analyzer para preparar a análise e supervisão de um lote de PDFs no site, com provedor e chave de API do usuário, limites de consumo e opção de acrescentar à planilha ou criar pelo modelo SHR."

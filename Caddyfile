@@ -1,0 +1,4 @@
+{$SHR_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy dashboard:8765
+}

@@ -1,0 +1,47 @@
+services:
+  dashboard:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SHR_DATA_DIR: /data
+      SHR_PUBLIC_HOST: ${SHR_DOMAIN:?Defina SHR_DOMAIN no arquivo .env}
+      SHR_PUBLIC_URL: https://${SHR_DOMAIN:?Defina SHR_DOMAIN no arquivo .env}
+    volumes:
+      - shr-data:/data
+    networks:
+      - private
+    expose:
+      - "8765"
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      SHR_DOMAIN: ${SHR_DOMAIN:?Defina SHR_DOMAIN no arquivo .env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      - private
+
+volumes:
+  shr-data:
+  caddy-data:
+  caddy-config:
+
+networks:
+  private:
+    internal: false
